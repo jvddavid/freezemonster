@@ -13,7 +13,4 @@ public interface Commons extends spriteframework.Commons {
     int CHANCE = 5;
     int PLAYER_WIDTH = 30;
     int PLAYER_HEIGHT = 60;
-
-    // Adiciona uma constante para a velocidade base dos monstros
-    int MONSTER_BASE_SPEED = 2;
 }

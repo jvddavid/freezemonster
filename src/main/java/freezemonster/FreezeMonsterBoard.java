@@ -114,14 +114,9 @@ public class FreezeMonsterBoard extends AbstractBoard {
             if (inGame) {
 
                 if (!raio.isVisible()) {
-
-                    // Faz o casting para Woody se for uma instância
-                    if (player instanceof Woody) {
-                        Woody woodyPlayer = (Woody) player;
-
-                        // Chama os métodos específicos da classe Woody
-                        raio = new FreezeBeam(x, y, woodyPlayer.getLastmoved());
-                    }
+                    Woody woodyPlayer = (Woody) player;
+                    // Chama os métodos específicos da classe Woody
+                    raio = new FreezeBeam(x, y, woodyPlayer.getLastmoved());
                 }
             }
         }
@@ -154,10 +149,8 @@ public class FreezeMonsterBoard extends AbstractBoard {
                             && raioY <= (monstroY + Commons.MONSTRO_HEIGHT)) {
 
                         // Realiza o casting diretamente
-                        if (monstro instanceof Monster) {
-                            Monster monstroCast = (Monster) monstro;
-                            monstro.setImage(monstroCast.getCongelado().getImage());
-                        }
+                        Monster monstroCast = (Monster) monstro;
+                        monstro.setImage(monstroCast.getCongelado().getImage());
 
                         monstro.setDying(true);
                         deaths++;

@@ -1,4 +1,4 @@
-package dev.davioliveira.freezemonster;
+package freezemonster;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

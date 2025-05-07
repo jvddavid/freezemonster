@@ -9,8 +9,6 @@ import spriteframework.Commons;
 import spriteframework.sprite.Player;
 
 public class Woody extends Player {
-
-  private int width;
   private int lastmoved = 2;
 
   public int getLastmoved() {
@@ -70,6 +68,7 @@ public class Woody extends Player {
 
   @Override
   public void act() {
+
     x += dx;
     y += dy;
 
@@ -97,19 +96,4 @@ public class Woody extends Player {
     width = ii.getImage().getWidth(null); // Define a largura desejada
     setImage(woodyImage);
   }
-
-  private void initRaio(int x, int y) {
-    String raioImg = "images/ray.png";
-    ImageIcon ii = new ImageIcon(raioImg);
-
-    Image raioImage = ii.getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT);
-    setImage(raioImage);
-
-    int H_SPACE = 6;
-    setX(x + H_SPACE);
-
-    int V_SPACE = 1;
-    setY(y - V_SPACE);
-  }
-
 }

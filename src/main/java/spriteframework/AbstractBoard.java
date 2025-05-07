@@ -103,7 +103,7 @@ public abstract class AbstractBoard extends JPanel {
         addKeyListener(new TAdapter());
         setFocusable(true);
         d = new Dimension(Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT);
-        setBackground(Color.black);
+        setBackground(Color.DARK_GRAY);
 
         timer = new Timer(Commons.DELAY, new GameCycle());
         timer.start();
@@ -160,9 +160,7 @@ public abstract class AbstractBoard extends JPanel {
 
         g.setRenderingHint(RenderingHints.KEY_RENDERING,
                 RenderingHints.VALUE_RENDER_QUALITY);
-        g.setColor(Color.black);
-        g.fillRect(0, 0, d.width, d.height);
-        g.setColor(Color.green);
+        g.setColor(getBackground());
 
         if (inGame) {
 

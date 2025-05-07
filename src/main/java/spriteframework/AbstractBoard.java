@@ -53,20 +53,16 @@ public abstract class AbstractBoard extends JPanel {
 
     protected LinkedList<Player> players;
     protected LinkedList<BadSprite> badSprites;
+    private int numberPlayers;
 
     protected boolean inGame = true;
 
-    // private String explImg = "src/images/explosion.png";
     protected String message = "Game Over";
     protected Timer timer;
 
     @SuppressWarnings("OverridableMethodCallInConstructor")
     public AbstractBoard() {
         initBoard();
-        createPlayers();
-        badSprites = new LinkedList<>();
-        createBadSprites();
-        createOtherSprites();
     }
 
     public Player getPlayer(int i) {
@@ -81,10 +77,6 @@ public abstract class AbstractBoard extends JPanel {
         doDrawing(g);
     }
 
-    // Frozen Spots
-    // void initBoard()
-    //
-    // HotSpots
     protected abstract void createBadSprites();
 
     protected abstract void createOtherSprites();
@@ -97,7 +89,9 @@ public abstract class AbstractBoard extends JPanel {
 
     protected void createPlayers() {
         players = new LinkedList<>();
-        players.add(createPlayer());
+        for (int i = 0; i < numberPlayers; i++) {
+            players.add(createPlayer());
+        }
     }
 
     protected Player createPlayer() {
@@ -114,11 +108,11 @@ public abstract class AbstractBoard extends JPanel {
         timer = new Timer(Commons.DELAY, new GameCycle());
         timer.start();
 
+        numberPlayers = 1;
         createPlayers();
         badSprites = new LinkedList<>();
         createBadSprites();
         createOtherSprites();
-        // shot = new Shot();
     }
 
     private void drawBadSprites(Graphics g) {
@@ -158,7 +152,8 @@ public abstract class AbstractBoard extends JPanel {
         }
     }
 
-    private void doDrawing(Graphics g1) { // Template Method
+    private void doDrawing(Graphics g1) {
+        // Template Method
         Graphics2D g = (Graphics2D) g1;
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);

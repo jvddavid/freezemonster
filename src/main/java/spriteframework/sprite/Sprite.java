@@ -4,7 +4,7 @@ import java.awt.Image;
 import java.awt.Rectangle;
 
 public class Sprite {
-
+    protected int width;
     private boolean visible;
     protected Image image;
     private boolean dying;
@@ -20,29 +20,30 @@ public class Sprite {
         visible = true;
     }
 
-    public void die() {
-        visible = false;
+    public void setDx(int dx) {
+        this.dx = dx;
     }
 
-    public boolean isVisible() {
-
-        return visible;
+    public void setDy(int dy) {
+        this.dy = dy;
     }
 
     public int getDx() {
         return dx;
     }
 
-    public void setDx(int dx) {
-        this.dx = dx;
-    }
-
     public int getDy() {
         return dy;
     }
 
-    public void setDy(int dy) {
-        this.dy = dy;
+    public void die() {
+
+        visible = false;
+    }
+
+    public boolean isVisible() {
+
+        return visible;
     }
 
     public void setImage(Image image) {

@@ -8,8 +8,6 @@ import spriteframework.Commons;
 
 public class Player extends Sprite {
 
-    private int width;
-
     @SuppressWarnings("OverridableMethodCallInConstructor")
     public Player() {
         loadImage();
@@ -63,7 +61,7 @@ public class Player extends Sprite {
     }
 
     protected void loadImage() {
-        ImageIcon ii = new ImageIcon(this.getClass().getResource("/images/player.png"));
+        ImageIcon ii = new ImageIcon("images/player.png");
         width = ii.getImage().getWidth(null);
         setImage(ii.getImage());
     }

@@ -13,9 +13,9 @@
     },
     {
       "type": "java",
-      "name": "App",
+      "name": "FreezeMonsterGame",
       "request": "launch",
-      "mainClass": "freezemonster.App",
+      "mainClass": "freezemonster.FreezeMonsterGame",
       "projectName": "freezemonster"
     }
   ]

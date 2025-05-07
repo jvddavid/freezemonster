@@ -26,7 +26,7 @@ No jogo Freeze Monster, o jogador controla o personagem Woody para navegar pelo 
 #### Como Executar
 
 1. Clone o repositório para sua máquina local.
-2. Abra o projeto no IntelliJ IDEA.
+2. Abra o projeto no Visual Code
 3. Certifique-se de que todas as dependências estão resolvidas.
 4. Execute a classe `FreezeMonsterGame` para iniciar o jogo Freeze Monster.
 
